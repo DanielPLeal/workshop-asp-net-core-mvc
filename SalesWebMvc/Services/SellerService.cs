@@ -33,6 +33,11 @@ namespace SalesWebMvc.Services
             return _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == id);
         }
 
+        internal object FindAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(int id)
         {
             var obj = _context.Seller.Find(id);
