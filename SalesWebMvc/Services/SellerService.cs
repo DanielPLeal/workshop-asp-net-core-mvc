@@ -17,9 +17,9 @@ namespace SalesWebMvc.Services
             _context = context;
         }
 
-        public async Task<List<Seller>> FindAllAsync()
+        public List<Seller> FindAll()
         {
-            return await _context.Seller.ToListAsync();
+            return  _context.Seller.ToList();
         }
 
         public void Insert(Seller obj)
@@ -33,10 +33,7 @@ namespace SalesWebMvc.Services
             return _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == id);
         }
 
-        internal object FindAll()
-        {
-            throw new NotImplementedException();
-        }
+         
 
         public void Remove(int id)
         {
